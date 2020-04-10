@@ -6,7 +6,15 @@
         xmlns:local="clr-namespace:Delegati"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+	<StackPanel>
+		<Button Content="Aktiviraj alaram" Click="Zvrrr"/>
+		<UniformGrid Columns="2">
+			<Label Content="Civil1: "/>
+			<Label Content="{Binding Source={StaticResource civil1}, Path=Status}"/>
+			<Label Content="Civil2: "/>
+			<Label Content="{Binding Source={StaticResource civil2}, Path=Status}"/>
+			<Label Content="Vatrogasac1: "/>
+			<Label Content="{Binding Source={StaticResource vatro1}, Path=Status}"/>
+		</UniformGrid>
+	</StackPanel>
 </Window>

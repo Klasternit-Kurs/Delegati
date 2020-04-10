@@ -20,10 +20,27 @@ namespace Delegati
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		Alaram a = new Alaram();
+		Civil c1;
+		Civil c2;
+		Vatrogasac v1;
+
 		public MainWindow()
 		{
+			c1 = new Civil(a);
+			c2 = new Civil(a);
+			v1 = new Vatrogasac(a);
+
+			Resources.Add("civil1", c1);
+			Resources.Add("civil2", c2);
+			Resources.Add("vatro1", v1);
 			InitializeComponent();
+
+
+
 			Primer p = new Primer();
+			
+
 			//MessageBox.Show(p.Metoda(5).ToString());
 			//MessageBox.Show(p.OvoJeGdeIdeMetoda(5).ToString());
 
@@ -42,14 +59,19 @@ namespace Delegati
 			lst.Add(i3);
 
 
-			i1.Ispisi2?.Invoke("Bla");
+			//i1.Ispisi2?.Invoke("Bla");
 
-			foreach (Ispisivac i in lst)
-			{
-				MessageBox.Show(i.Ispisi?.Invoke("test"));
-			}
+			//foreach (Ispisivac i in lst)
+			//{
+			//	MessageBox.Show(i.Ispisi?.Invoke("test"));
+			//}
 		}
 
 		private string MojaMetoda(string s) => "Bas me briga za ulazni parametar :)";
+
+		private void Zvrrr(object sender, RoutedEventArgs e)
+		{
+			a.OglasiSe();
+		}
 	}
 }
